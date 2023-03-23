@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noEmitOnError": true,
+    "removeComments": true,
+    "declaration": true,
+    "module": "esnext",
+    "target": "es5",
+    "outDir": "dist",
+    "strict": true
+  },
+  "include": ["src/**/*.ts"]
+}

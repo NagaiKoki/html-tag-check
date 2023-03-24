@@ -3,8 +3,8 @@
   "author": "Koki Nagai",
   "version": "0.1.0",
   "description": "HTML Tag Checker by TypeScript",
-  "main": "dist/index.js",
-  "module": "./lib/mjs/index.js",
+  "main": "dist/esm/index.js",
+  "module": "./dist/esm/index.js",
   "keywords": [],
   "license": "MIT",
   "exports": {

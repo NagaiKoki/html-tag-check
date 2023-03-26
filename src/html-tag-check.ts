@@ -1,3 +1,5 @@
+import { trimText } from "./utils/trimText";
+
 const NO_CLOSE_TAG_LIST = [
   "br",
   "hr",
@@ -58,13 +60,24 @@ export type Valid = { type: "valid" };
 
 export type Result = Valid | Invalid;
 
-export const htmlTagCheck = (html: string): Result => {
+type Options = {
+  trimHtml?: boolean;
+};
+
+const defaultOptions = {
+  trimHtml: false,
+};
+
+export const htmlTagCheck = (html: string, options?: Options): Result => {
+  const isTrimHtml = options?.trimHtml ?? defaultOptions.trimHtml;
+  const htmlString = isTrimHtml ? trimText(html) : html;
+
   const regex =
     /<([a-z][a-z0-9]*)\b[^>]*\/>|<([a-z][a-z0-9]*)\b[^>]*>|<\/([a-z][a-z0-9]*)\s*>/gi;
   const openingStack: RegExpExecArray[] = [];
   let match: RegExpExecArray | null = null;
 
-  while ((match = regex.exec(html)) !== null) {
+  while ((match = regex.exec(htmlString)) !== null) {
     const tag = match[0];
     const selfClosingTag = match[1];
     const openingTag = match[2];

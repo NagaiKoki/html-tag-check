@@ -35,9 +35,9 @@
     "build:types": "tsc -p tsconfig.types.json",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "update:major": "version major",
-    "update:minor": "version minor",
-    "update:patch": "version patch"
+    "update:major": "pnpm version major",
+    "update:minor": "pnpm version minor",
+    "update:patch": "pnpm version patch"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",

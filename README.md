@@ -22,22 +22,22 @@ htmlTagCheck(HTML);
 // => { type: "invalid_extra_opening_tag", detail: { type: "opening", tag: "<div>", index: 0 } }
 ```
 
-#### Arguments
+### Arguments
 
 | Name      | Type     | Required | Description            |
 | --------- | -------- | -------- | ---------------------- |
 | `html`    | `string` | true     | html you want to check |
 | `options` | `object` | false    | the options of checker |
 
-##### options
+#### options
 
 | Name       | Type      | Required | Description                                        |
 | ---------- | --------- | -------- | -------------------------------------------------- |
 | `trimHtml` | `boolean` | false    | remove new lines and white spaces from html string |
 
-#### Return
+### Return
 
-##### Valid
+#### Valid
 
 ```ts
 {
@@ -45,9 +45,9 @@ htmlTagCheck(HTML);
 }
 ```
 
-##### Invalid
+#### Invalid
 
-###### extra closing tag error
+##### extra closing tag error
 
 ```ts
 {
@@ -62,7 +62,7 @@ htmlTagCheck(HTML);
 }
 ```
 
-###### mismatch opening and closing tag error
+##### mismatch opening and closing tag error
 
 ```ts
 {
@@ -82,7 +82,7 @@ htmlTagCheck(HTML);
 }
 ```
 
-###### extra opening tag error
+##### extra opening tag error
 
 ```ts
 {

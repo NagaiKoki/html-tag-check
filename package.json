@@ -34,7 +34,10 @@
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:types": "tsc -p tsconfig.types.json",
     "test": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "update:major": "version major",
+    "update:minor": "version minor",
+    "update:patch": "version patch"
   },
   "devDependencies": {
     "@types/jest": "^29.5.0",

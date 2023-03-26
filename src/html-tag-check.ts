@@ -54,7 +54,7 @@ export type Invalid =
       ];
     };
 
-type Valid = { type: "valid" };
+export type Valid = { type: "valid" };
 
 export type Result = Valid | Invalid;
 

@@ -98,11 +98,11 @@ describe("htmlTagCheck", () => {
     });
   });
 
-  describe("If ignoreTags are ['size', 'mytag']", () => {
+  describe("If ignoreTagNames are ['size', 'mytag']", () => {
     const html = `<!DOCTYPE><body><p>test</p><size><mytag></body>`;
     test("return valid type", () => {
       expect(
-        htmlTagCheck(html, { ignoreTags: ["size", "mytag"] })
+        htmlTagCheck(html, { ignoreTagNames: ["size", "mytag"] })
       ).toStrictEqual<Return>({
         type: "valid",
       });

@@ -62,17 +62,18 @@ export type Result = Valid | Invalid;
 
 type Options = {
   trimHtml?: boolean;
-  ignoreTags?: string[];
+  ignoreTagNames?: string[];
 };
 
 const defaultOptions = {
   trimHtml: false,
-  ignoreTags: [],
+  ignoreTagNames: [],
 };
 
 export const htmlTagCheck = (html: string, options?: Options): Result => {
   const isTrimHtml = options?.trimHtml ?? defaultOptions.trimHtml;
-  const ignoreTags = options?.ignoreTags ?? defaultOptions.ignoreTags;
+  const ignoreTagNames =
+    options?.ignoreTagNames ?? defaultOptions.ignoreTagNames;
 
   const htmlString = isTrimHtml ? trimText(html) : html;
 
@@ -92,9 +93,9 @@ export const htmlTagCheck = (html: string, options?: Options): Result => {
     }
 
     if (
-      ignoreTags.includes(selfClosingTag) ||
-      ignoreTags.includes(openingTag) ||
-      ignoreTags.includes(closingTag)
+      ignoreTagNames.includes(selfClosingTag) ||
+      ignoreTagNames.includes(openingTag) ||
+      ignoreTagNames.includes(closingTag)
     ) {
       continue;
     }

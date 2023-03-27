@@ -31,9 +31,10 @@ htmlTagCheck(HTML);
 
 #### options
 
-| Name       | Type      | Required | Description                                        |
-| ---------- | --------- | -------- | -------------------------------------------------- |
-| `trimHtml` | `boolean` | false    | remove new lines and white spaces from html string |
+| Name             | Type       | Required | Description                                                  |
+| ---------------- | ---------- | -------- | ------------------------------------------------------------ |
+| `trimHtml`       | `boolean`  | false    | remove new lines and white spaces from html string           |
+| `ignoreTagNames` | `string[]` | false    | tag names you want to ignore check. e.g. ["size","template"] |
 
 ### Return
 

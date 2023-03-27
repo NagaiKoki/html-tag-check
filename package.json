@@ -1,7 +1,7 @@
 {
   "name": "html-tag-check",
   "author": "Koki Nagai",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "HTML Tag Checker by TypeScript",
   "homepage": "https://github.com/NagaiKoki/html-tag-check",
   "repository": {

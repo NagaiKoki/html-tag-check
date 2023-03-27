@@ -3,6 +3,11 @@
   "author": "Koki Nagai",
   "version": "0.1.7",
   "description": "HTML Tag Checker by TypeScript",
+  "homepage": "https://github.com/NagaiKoki/html-tag-check",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NagaiKoki/html-tag-check"
+  },
   "main": "dist/esm/index.js",
   "module": "./dist/esm/index.js",
   "keywords": [

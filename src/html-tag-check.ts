@@ -62,14 +62,18 @@ export type Result = Valid | Invalid;
 
 type Options = {
   trimHtml?: boolean;
+  ignoreTags?: string[];
 };
 
 const defaultOptions = {
   trimHtml: false,
+  ignoreTags: [],
 };
 
 export const htmlTagCheck = (html: string, options?: Options): Result => {
   const isTrimHtml = options?.trimHtml ?? defaultOptions.trimHtml;
+  const ignoreTags = options?.ignoreTags ?? defaultOptions.ignoreTags;
+
   const htmlString = isTrimHtml ? trimText(html) : html;
 
   const regex =
@@ -84,6 +88,14 @@ export const htmlTagCheck = (html: string, options?: Options): Result => {
     const closingTag = match[3];
 
     if (selfClosingTag) {
+      continue;
+    }
+
+    if (
+      ignoreTags.includes(selfClosingTag) ||
+      ignoreTags.includes(openingTag) ||
+      ignoreTags.includes(closingTag)
+    ) {
       continue;
     }
 
@@ -145,3 +157,5 @@ export const htmlTagCheck = (html: string, options?: Options): Result => {
     type: "valid",
   };
 };
+
+const ignoreTags = () => {};

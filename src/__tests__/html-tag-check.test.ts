@@ -84,4 +84,28 @@ describe("htmlTagCheck", () => {
       });
     });
   });
+
+  describe("If trimHtml is true", () => {
+    const html = `
+      <div>
+        <p>test</p>
+      </div>
+    `;
+    test("return valid type", () => {
+      expect(htmlTagCheck(html, { trimHtml: true })).toStrictEqual<Return>({
+        type: "valid",
+      });
+    });
+  });
+
+  describe("If ignoreTags are ['size', 'mytag']", () => {
+    const html = `<!DOCTYPE><body><p>test</p><size><mytag></body>`;
+    test("return valid type", () => {
+      expect(
+        htmlTagCheck(html, { ignoreTags: ["size", "mytag"] })
+      ).toStrictEqual<Return>({
+        type: "valid",
+      });
+    });
+  });
 });

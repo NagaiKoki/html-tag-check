@@ -158,5 +158,3 @@ export const htmlTagCheck = (html: string, options?: Options): Result => {
     type: "valid",
   };
 };
-
-const ignoreTags = () => {};
